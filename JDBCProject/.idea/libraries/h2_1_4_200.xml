@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="h2-1.4.200">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../h2-2019-10-14/h2/bin/h2-1.4.200.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../eclipse-jee-2020-06-R-win32-x86_64/eclipse/lombok.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

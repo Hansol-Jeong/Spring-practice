@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO"><!-- 이제 마이바티스가 이 xml파일을 로딩했을 때 5개의 아이디를 요 네임스페이스에 등록하겠다. -->
+	<!-- <insert id="insertBoard" parameterType="com.rubypaper.biz.board.BoardVO"> --><!--  야 바이바티스야 요 타입의 객체를 파라미터로 받아라 -->
+		<!-- <insert id="insertBoard" parameterType="board"> -->
+		<resultMap type="board" id="boardResult">
+		<result property="seq" column="SEQ"/><!-- 컬럼은 대소 구분없지만 가급적이면 대문자 -->
+		<result property="title" column="TITLE"/>
+		<result property="writer" column="WRITER"/>
+		<result property="content" column="CONTNET"/>
+		<result property="regDate" column="REGDATE"/>
+		<result property="cnt" column="CNT"/>
+		</resultMap>
+		<insert id="insertBoard"><!-- 마이바티스야 인설트할때 요네임스페이스에있는 id실행해 이때 파라미터 넘겨줄거야(암묵적으로) 왜? xml파일 크기 줄일려고-->
+		INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT)
+		VALUES((SELECT NVL(MAX(SEQ), 0) + 1 FROM BOARD), #{title}, #{writer}, #{content})
+	</insert>
+
+	<update id="updateBoard">
+		UPDATE BOARD SET #{title}, #{content} WHERE #{seq}
+	</update>
+
+	<delete id="deleteBoard">
+		DELETE BOARD WHERE #{seq}
+	</delete>
+
+	<select id="getBoard" resultType="com.rubypaper.biz.board.BoardVO"><!-- 근데 리절트 타입은 생략할 수 없어 -->
+		SELECT * FROM BOARD WHERE #{seq}
+	</select>
+
+	<select id="getBoardList" resultType="board">
+		SELECT * FROM BOARD
+		ORDER BY SEQ DESC
+	</select>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JPAProject">
+		<!-- <class>com.rubypaper.domain.Board</class>이렇게 등록해야 하이버이트, JPA가 쓸 수 
+			있는데 마치 @com처럼 @Entity해준다 -->
+
+		<!-- 여기부터 설정하는게 매우매우 까다로워요 -->
+		<properties>
+			<!-- 필수 속성 -->
+			<property name="javax.persistence.jdbc.driver"
+				value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:h2:tcp://localhost/~/test" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.H2Dialect" />
+				<!-- 생성되는 sql이 어떤용으로 만들어질거냐(oracle, h2, hibernate...) -->
+
+			<!-- 옵션 -->
+			
+			<!-- 콘솔에 보일지 안보일지 -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- 서식 지정(들여쓰기, 개행처리) -->
+			<property name="hibernate.format_sql" value="true" />
+			<!-- 코멘트 -->
+			<property name="hibernate.use_sql_comments" value="false" />
+			<property name="hibernate.id.new_generator_mappings"
+				value="true" />
+				<!-- ddl: dataDefinitionLanguage, create:매번 테이블을 드랍하고 다시만들르어라-->
+				<!-- update: 유지해서 업데이트 (없으면 새로만들고)-->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties>
+
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<!-- 모든 컨트롤러 클래스들을 bean 등록한다. -->
+	<bean id="getBoardList" class="com.rubypaper.web.controller.board.GetBoardListController"/>
+	
+	<!-- 클라이언트의 요청을 어떤 컨트롤러가 처리할지 HandlerMapping으로 매핑한다. -->
+	<bean id="handlerMapping" 
+	      class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+	</bean>
+
+</beans>

@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/com/rubypaper/web/controller/DispatcherServlet.java=UTF-8
+encoding//src/com/rubypaper/web/controller/DispatcherServletBackup.java=UTF-8
+encoding//src/com/rubypaper/web/controller/board/DeleteBoardController.java=UTF-8
+encoding//src/com/rubypaper/web/controller/board/GetBoardController.java=UTF-8
+encoding//src/com/rubypaper/web/controller/board/GetBoardListController.java=UTF-8
+encoding//src/com/rubypaper/web/controller/board/InsertBoardController.java=UTF-8
+encoding//src/com/rubypaper/web/controller/board/UpdateBoardController.java=UTF-8
+encoding//src/com/rubypaper/web/controller/user/LoginController.java=UTF-8
